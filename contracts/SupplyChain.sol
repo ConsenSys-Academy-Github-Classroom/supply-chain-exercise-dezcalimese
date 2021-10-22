@@ -139,6 +139,7 @@ contract SupplyChain {
     items[sku].buyer = msg.sender;
     items[sku].seller.transfer(items[sku].price);
     items[sku].state = State.Sold;
+    emit LogSold(sku);
   }
 
   // 1. Add modifiers to check:
